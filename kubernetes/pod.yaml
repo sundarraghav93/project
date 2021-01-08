@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: google-pod
+  labels: 
+    zone: pre-prod
+    version: v1
+spec:
+  containers:
+  - name: google-container
+    image: nginx
+    ports:
+    - containerPort: 80
+      

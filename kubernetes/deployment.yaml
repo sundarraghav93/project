@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: google-deployment
+  labels:
+    app: google-app
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: google-app
+  template:
+    metadata:
+      labels:
+        app: google-app
+    spec:
+      containers:
+        - name: google-container
+          image: nginx
+          ports:
+          - containerPort: 80
